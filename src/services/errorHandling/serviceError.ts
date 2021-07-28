@@ -12,10 +12,6 @@ export default function databaseError(err: ServiceError) {
       logger.info(err);
       return 409;
 
-    case ServiceCodes.wrongPassword:
-      logger.info(err);
-      return 401;
-
     default:
       logger.error(err);
       return 500;
