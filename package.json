@@ -7,7 +7,8 @@
     "start": "NODE_ENV=production node dist/server.js",
     "build": "npx tsc",
     "dev": "NODE_ENV=development npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\"",
-    "test": "NODE_ENV=test npx jest --rootDir=tests -i"
+    "test": "NODE_ENV=test npx jest --rootDir=tests -i",
+    "typeorm": "ts-node ./node_modules/typeorm/cli"
   },
   "keywords": [],
   "author": "Rafael Bahiense Brasão",
@@ -20,7 +21,9 @@
     "joi": "^17.4.0",
     "path": "^0.12.7",
     "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
     "tslib": "^2.3.0",
+    "typeorm": "^0.2.34",
     "winston": "^3.3.3"
   },
   "devDependencies": {
