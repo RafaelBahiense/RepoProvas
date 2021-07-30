@@ -1,8 +1,8 @@
 export interface ReceivedTest {
   name: string;
-  categoryId: string;
-  subjectId: string;
-  professorId: string;
+  categoryId: number;
+  subjectId: number;
+  professorId: number;
   link: string;
 }
 
