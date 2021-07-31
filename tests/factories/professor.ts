@@ -10,10 +10,15 @@ export class GenProfessor implements Professor {
   public id: number;
   public name: string;
 
-  constructor({ name = faker.random.word() }: Professor) {
+  constructor({ name = faker.name.findName() }: Professor) {
     this.id = GenProfessor._id++;
     this.name = name;
   }
 }
 
-export const professors = ["Alex", "Leandro", "Aline", "Paulo", "Amanda"];
+export function genProfessors(amount: number) {
+    const professors: GenProfessor[] = [];
+    for(let i = 0; i < amount; i++)
+        professors.push(new GenProfessor({}))
+    return professors
+}
