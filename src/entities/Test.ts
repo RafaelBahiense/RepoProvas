@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 
-import Category from "./Categories";
+import Category from "./Category";
 import Subject from "./Subject";
 import Professor from "./Professor";
 
