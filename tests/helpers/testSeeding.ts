@@ -1,10 +1,14 @@
 import { getRepository } from "typeorm";
 
 import { categories } from "../factories/category";
-import { professors } from "../factories/professor";
+import { genProfessors } from "../factories/professor";
 import { subjects, professors_subjects } from "../factories/subject";
 
-export default async function seedDB () {
+interface SeedInfos {
+  professors: number;
+}
+
+export default async function seedDB({ professors = 0 }: SeedInfos) {
   await Promise.all(
     categories.map(
       async (category) =>
@@ -20,7 +24,7 @@ export default async function seedDB () {
   );
 
   await Promise.all(
-    professors.map(
+    genProfessors(professors).map(
       async (professor) =>
         await getRepository("professors").insert({ name: professor })
     )
@@ -34,4 +38,4 @@ export default async function seedDB () {
         )
     )
   );
-};
+}
