@@ -2,9 +2,9 @@ import faker from "faker";
 
 export interface Test {
   name?: string;
-  categoryId?: number;
-  subjectId?: number;
-  professorId?: number;
+  categoryId: number;
+  subjectId: number;
+  professorId: number;
   link?: string;
 }
 
@@ -20,10 +20,16 @@ export class GenTest implements Test {
 
   constructor({
     name = faker.random.word(),
+    categoryId,
+    subjectId,
+    professorId,
     link = faker.internet.url(),
   }: Test) {
     this.id = GenTest._id++;
     this.name = name;
+    this.categoryId = categoryId;
+    this.subjectId = subjectId;
+    this.professorId = professorId;
     this.link = link;
   }
 }
