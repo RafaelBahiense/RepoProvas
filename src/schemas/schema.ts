@@ -7,3 +7,5 @@ export const testSchema = Joi.object({
     professorId: Joi.number().min(1),
     link: Joi.string().uri(),
 });
+
+export const idSchema = Joi.number().min(1);
