@@ -1,7 +1,10 @@
 import faker from "faker";
 
+import { GenSemester } from "./semester";
+
 export interface Subject {
   name?: string;
+  semesterId: number;
 }
 
 export class GenSubject implements Subject {
@@ -9,26 +12,19 @@ export class GenSubject implements Subject {
 
   public id: number;
   public name: string;
+  public semesterId: number;
 
-  constructor({ name = faker.random.word() }: Subject) {
+  constructor({ name = faker.random.word(), semesterId }: Subject) {
     this.id = GenSubject._id++;
     this.name = name;
+    this.semesterId = semesterId;
   }
 }
 
-export const subjects = [
-  "Cálculo 1",
-  "Cálculo 2",
-  "Cálculo 3",
-  "Geometria analítica",
-  "Álgebra linear",
-];
-
-export const professors_subjects = [
-  {professorsId: 1, subjectsId: 1},
-  {professorsId: 3, subjectsId: 1},
-  {professorsId: 3, subjectsId: 3},
-  {professorsId: 2, subjectsId: 2},
-  {professorsId: 4, subjectsId: 4},
-  {professorsId: 5, subjectsId: 5},
-]
+export function genSubjects(semesters: GenSemester[], amount: number = 5) {
+  const subjects: GenSubject[] = [];
+  for (let i = 0; i < semesters.length; i++)
+    for (let j = 0; j < amount; j++)
+      subjects.push(new GenSubject({ semesterId: semesters[i].id }));
+  return subjects;
+}

@@ -16,4 +16,11 @@ export class GenCategory implements Category {
   }
 }
 
-export const categories = ["P1", "P2", "VR", "VS"];
+const sampleCategories = ["P1", "P2", "VR", "VS"];
+
+export function genCategories(categoriesList: string[] = sampleCategories) {
+  const categories: GenCategory[] = [];
+  for (let i = 0; i < categoriesList.length; i++)
+    categories.push(new GenCategory({ name: categoriesList[i] }));
+  return categories;
+}
