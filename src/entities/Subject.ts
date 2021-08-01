@@ -23,6 +23,9 @@ export default class Subject {
   @OneToMany(() => Subject, (subject) => subject.id)
   tests!: Test[];
 
+  @Column()
+  semesterId!: number;
+
   @ManyToOne(() => Semester, (semester) => semester.id)
   semester!: Semester;
 
