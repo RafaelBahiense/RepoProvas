@@ -10,3 +10,16 @@ export async function getAll(req: Request, res: Response, next: NextFunction) {
     next(e);
   }
 }
+
+export async function getAllWithCount(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const subjects = await subjectsService.getAllWithCount();
+    res.status(200).send(subjects);
+  } catch (e) {
+    next(e);
+  }
+}

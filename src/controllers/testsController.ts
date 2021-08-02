@@ -30,3 +30,34 @@ export async function post(req: Request, res: Response, next: NextFunction) {
     next(e);
   }
 }
+
+
+export async function getByProfessorId(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const id = parseInt(req.params["id"]);
+
+    const tests = await testsService.getByProfessorId(id);
+    res.status(200).send(tests);
+  } catch (e) {
+    next(e);
+  }
+}
+
+export async function getBySubjectId(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const id = parseInt(req.params["id"]);
+
+    const tests = await testsService.getBySubjectId(id);
+    res.status(200).send(tests);
+  } catch (e) {
+    next(e);
+  }
+}
