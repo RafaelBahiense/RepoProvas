@@ -10,5 +10,6 @@ export async function getAll() {
   .select("professors")
   .leftJoin("professors.tests", "tests")
   .loadRelationCountAndMap("professors.testsCount", "professors.tests")
+  .orderBy("professors.id")
   .getMany();
 }
