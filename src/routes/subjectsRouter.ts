@@ -6,4 +6,6 @@ const router: Router = Router();
 
 router.get("/subjects", subjects.getAll);
 
+router.get("/subjects/tests", subjects.getAllWithCount);
+
 export const SubjectsRouter: Router = router;
