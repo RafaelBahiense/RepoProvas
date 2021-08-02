@@ -46,7 +46,7 @@ export default async function seedDB() {
   await Promise.all(
     seed.semesters.map(
       async (semester) =>
-        await getRepository("semesters").insert({ name: semester })
+        await getRepository("semesters").insert({ name: semester.name })
     )
   );
 
@@ -54,7 +54,7 @@ export default async function seedDB() {
   await Promise.all(
     seed.subjects.map(
       async (subject) =>
-        await getRepository("subjects").insert({ name: subject })
+        await getRepository("subjects").insert({ name: subject.name, semesterId: subject.semesterId})
     )
   );
 
@@ -62,7 +62,7 @@ export default async function seedDB() {
   await Promise.all(
     seed.professors.map(
       async (professor) =>
-        await getRepository("professors").insert({ name: professor })
+        await getRepository("professors").insert({ name: professor.name })
     )
   );
 
