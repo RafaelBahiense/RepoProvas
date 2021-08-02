@@ -17,7 +17,7 @@ export default async function connect(): Promise<Connection> {
   const connectionManager = getConnectionManager();
   const connection = connectionManager.create({
     name: "default",
-    type: DB_DIALECT as any,
+    type: "postgres",
     url:
       DATABASE_URL ||
       `${DB_DIALECT}://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`,
