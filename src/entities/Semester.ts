@@ -10,6 +10,6 @@ export default class Semester {
   @Column()
   name!: string;
 
-  @OneToMany(() => Semester, (semester) => semester.id)
+  @OneToMany(() => Subject, (subject) => subject.semester)
   Subjects!: Subject[];
 }

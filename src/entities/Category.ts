@@ -10,6 +10,6 @@ export default class Category {
   @Column()
   name!: string;
 
-  @OneToMany(() => Category, (category) => category.id)
+  @OneToMany(() => Test, (test) => test.category)
   tests!: Test[];
 }

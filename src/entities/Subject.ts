@@ -20,7 +20,7 @@ export default class Subject {
   @Column()
   name!: string;
 
-  @OneToMany(() => Subject, (subject) => subject.id)
+  @OneToMany(() => Test, (test) => test.subject)
   tests!: Test[];
 
   @Column()

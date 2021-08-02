@@ -11,7 +11,7 @@ export default class Professor {
   @Column()
   name!: string;
 
-  @OneToMany(() => Professor, (professor) => professor.id)
+  @OneToMany(() => Test, (test) => test.professor)
   tests!: Test[];
 
   @ManyToMany(() => Subject, (subject) => subject.professors)
