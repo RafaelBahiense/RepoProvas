@@ -29,5 +29,11 @@ export = {
     migrationsDir: "src/migrations",
     entitiesDir: "src/entities/*.ts",
   },
+  ssl: true,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    }
+  },
   migrationsTransactionMode: 'each'
 };

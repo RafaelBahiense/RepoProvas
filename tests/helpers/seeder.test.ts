@@ -9,7 +9,7 @@ beforeAll(async () => {
   await seedDB();
 });
 
-jest.setTimeout(10000)
+jest.setTimeout(20000)
 
 describe("GET /category/:id", () => {
 
