@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node dist/server.js",
-    "build": "npx tsc && npm run typeorm migration:run",
+    "build": "npx tsc",
     "dev": "NODE_ENV=development npm run typeorm migration:run && npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\"",
     "test": "NODE_ENV=test npm run typeorm migration:run && npx jest --rootDir=tests -i",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
