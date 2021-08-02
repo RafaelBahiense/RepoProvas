@@ -5,9 +5,9 @@ import { GenCategory } from "./category";
 
 export interface Test {
   name?: string;
-  categoryId: number;
-  subjectId: number;
-  professorId: number;
+  categoryId: number | null;
+  subjectId: number | null;
+  professorId: number | null;
   link?: string;
 }
 
@@ -16,9 +16,9 @@ export class GenTest implements Test {
 
   public id: number;
   public name: string;
-  public categoryId: number;
-  public subjectId: number;
-  public professorId: number;
+  public categoryId: number | null;
+  public subjectId: number | null;
+  public professorId: number | null;
   public link: string;
 
   constructor({
