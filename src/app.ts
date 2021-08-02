@@ -4,7 +4,7 @@ import "reflect-metadata";
 
 import { MainRouter } from "./routes/mainRouter";
 import errorHandler, { jsonError} from "./controllers/error/errorController";
-import connectDatabase from "../src/config/database";
+import connectDatabase from "./config/database";
 
 
 const app: Application = express();
